@@ -1,0 +1,18 @@
+businessName: "Rizq Marketing"
+description: "Rizq Marketing builds and runs Google Ads, Meta, and SEO campaigns for growing businesses, including clients with over $100 million in combined revenue."
+logo: "/assets/rizq-logo-full.png"
+markLogo: "/assets/rizq-mark.png"
+defaultOgImage: "/assets/rizq-logo-full.png"
+email: "info@rizqmarketing.com"
+phone: ""
+address:
+  street: ""
+  city: ""
+  region: ""
+  postalCode: ""
+  country: ""
+areaServed: "US"
+languages:
+  - "en"
+  - "es"
+socialLinks: []

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Thank You | Rizq Marketing"
+  description="Thanks for reaching out to Rizq Marketing. We typically reply within one business day."
+  noindex
+  floatCta={false}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Thank you', path: '/thank-you' }]}
+>
+  <section class="hero-simple" style="text-align:center; max-width:640px; margin:0 auto; padding:120px 0 100px;">
+    <div class="eyebrow" style="justify-content:center;">Message received</div>
+    <h1>Thank you. We're on it.</h1>
+    <p class="sub">Your request has been sent to our team. We typically reply within one business day with a plan built around your goals.</p>
+    <div class="hero-ctas" style="justify-content:center; margin-top:28px;">
+      <a href="/" class="btn btn-gold">Back to home</a>
+      <a href="/services" class="btn btn-ghost">See our services</a>
+    </div>
+  </section>
+</Base>

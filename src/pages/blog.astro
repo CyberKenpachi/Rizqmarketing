@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import BlogListing from '../components/BlogListing.astro';
+import { getPage, getPosts, getCategoryIndex, PAGE_SIZE } from '../lib/content';
+
+const page = await getPage('blog');
+const posts = await getPosts();
+const cats = await getCategoryIndex();
+const categoryTitles = Object.fromEntries(cats.map((c) => [c.id, c.title]));
+const total = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+---
+
+<Base
+  title={page.metaTitle}
+  description={page.metaDescription}
+  ogImage={page.ogImage}
+  noindex={page.noindex || posts.length === 0}
+  current="blog"
+  next={total > 1 ? '/blog/page/2' : undefined}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }]}
+>
+  <section class="hero-simple">
+    <div class="eyebrow">Blog</div>
+    <h1>Marketing insights for growing businesses.</h1>
+    <p class="sub">Practical guidance on Google Ads, Meta advertising, SEO and local visibility.</p>
+  </section>
+
+  <div id="blogResults" hidden></div>
+  <div id="blogDefault">
+    <BlogListing posts={posts.slice(0, PAGE_SIZE)} categoryTitles={categoryTitles} current={1} total={total} search />
+  </div>
+
+  <script>
+    // Supports the site's SearchAction (/blog?s=term) with a lightweight client-side filter.
+    const term = new URLSearchParams(location.search).get('s')?.trim().toLowerCase();
+    if (term) {
+      const input = document.querySelector<HTMLInputElement>('.blog-search input');
+      if (input) input.value = term;
+      fetch('/blog/search.json')
+        .then((r) => r.json())
+        .then((items: { title: string; description: string; url: string; date: string }[]) => {
+          const words = term.split(/\s+/);
+          const hits = items.filter((i) => words.every((w) => (i.title + ' ' + i.description).toLowerCase().includes(w)));
+          const out = document.getElementById('blogResults')!;
+          const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+          out.innerHTML = hits.length
+            ? `<div class="post-grid">${hits
+                .map(
+                  (h) =>
+                    `<article class="post-card"><div class="post-card-body"><h2><a href="${esc(h.url)}">${esc(h.title)}</a></h2><p>${esc(h.description)}</p></div></article>`,
+                )
+                .join('')}</div>`
+            : `<p class="empty-state">No articles matched “${esc(term)}”.</p>`;
+          out.hidden = false;
+          document.getElementById('blogDefault')!.querySelector('.post-grid')?.remove();
+          document.getElementById('blogDefault')!.querySelector('.pagination')?.remove();
+        });
+    }
+  </script>
+</Base>

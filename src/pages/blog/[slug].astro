@@ -1,0 +1,87 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { getPosts, getCategoryIndex, getSettings, slugOf, abs, excerpt, formatDate } from '../../lib/content';
+import { articleNode, faqNode } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: slugOf(post) }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const d = post.data;
+const slug = slugOf(post);
+const settings = await getSettings();
+const cats = await getCategoryIndex();
+const titles = Object.fromEntries(cats.map((c) => [c.id, c.title]));
+const { Content } = await render(post);
+
+const title = d.metaTitle ?? `${d.title} | ${settings.businessName}`;
+const description = d.metaDescription ?? excerpt(post.body);
+const image = d.featuredImage ?? settings.defaultOgImage;
+const url = abs(`/blog/${slug}`)!;
+const nodes = [
+  articleNode({ url, title: d.title, description, image: abs(image), published: d.date, modified: d.updated }),
+  ...(d.faq.length ? [faqNode(d.faq)] : []),
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  ogImage={image}
+  ogType="article"
+  publishedTime={d.date.toISOString()}
+  modifiedTime={(d.updated ?? d.date).toISOString()}
+  current="blog"
+  nodes={nodes}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: d.title, path: `/blog/${slug}` },
+  ]}
+>
+  <article>
+    <header class="post-head">
+      {
+        d.categories.length > 0 && (
+          <div class="chips">
+            {d.categories.map((c) => (
+              <a class="chip" href={`/blog/category/${c}`}>{titles[c] ?? c}</a>
+            ))}
+          </div>
+        )
+      }
+      <h1>{d.title}</h1>
+      <div class="post-meta">
+        <time datetime={d.date.toISOString()}>{formatDate(d.date)}</time>
+        {d.updated && <span> · Updated <time datetime={d.updated.toISOString()}>{formatDate(d.updated)}</time></span>}
+      </div>
+    </header>
+    {
+      d.featuredImage && (
+        <div class="post-feature">
+          <div class="media-frame">
+            <img src={d.featuredImage} alt={d.featuredImageAlt ?? ''} width="1280" height="720" fetchpriority="high" decoding="async" />
+          </div>
+        </div>
+      )
+    }
+    <div class="prose"><Content /></div>
+    {
+      d.faq.length > 0 && (
+        <section class="post-faq">
+          <div class="sec-head">
+            <div class="eyebrow">FAQ</div>
+            <h2>Frequently asked questions</h2>
+          </div>
+          <Faq items={d.faq} />
+        </section>
+      )
+    }
+  </article>
+  <div class="post-end"><CtaBanner /></div>
+</Base>

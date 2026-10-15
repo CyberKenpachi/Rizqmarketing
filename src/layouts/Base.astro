@@ -1,0 +1,134 @@
+---
+import '../styles/global.css';
+import '../styles/components.css';
+import SEO from '../components/SEO.astro';
+import Schema from '../components/Schema.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, abs, getSettings, getServices, getPosts, slugOf } from '../lib/content';
+import { organizationNode, websiteNode, breadcrumbNode } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+  prev?: string;
+  next?: string;
+  nodes?: Record<string, unknown>[];
+  breadcrumbs?: { name: string; path: string }[];
+  current?: string;
+  floatCta?: boolean;
+  footerRight?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+  prev,
+  next,
+  nodes = [],
+  breadcrumbs,
+  current,
+  floatCta = true,
+  footerRight,
+} = Astro.props;
+
+const settings = await getSettings();
+const services = await getServices();
+const showBlog = (await getPosts()).length > 0;
+
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/').replace(/(.)\/$/, '$1');
+const canonical = new URL(path, SITE + '/').toString();
+
+const graph = [
+  organizationNode(
+    settings,
+    services.map((s) => ({ title: s.data.title, slug: slugOf(s), serviceType: s.data.serviceType, summary: s.data.summary })),
+  ),
+  websiteNode(settings),
+  ...(breadcrumbs ? [breadcrumbNode(breadcrumbs)] : []),
+  ...nodes,
+];
+
+const fontsHref =
+  'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={abs(ogImage ?? settings.defaultOgImage)}
+      type={ogType}
+      noindex={noindex}
+      siteName={settings.businessName}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      prev={prev ? abs(prev) : undefined}
+      next={next ? abs(next) : undefined}
+    />
+    <link rel="icon" href={settings.markLogo} />
+    <link rel="alternate" type="application/rss+xml" title={`${settings.businessName} Blog`} href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href={fontsHref} onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href={fontsHref} /></noscript>
+    <Schema nodes={graph} />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <Header current={current} showBlog={showBlog} markLogo={settings.markLogo} businessName={settings.businessName} />
+    <div class="wrap">
+      <slot />
+    </div>
+    <Footer
+      showBlog={showBlog}
+      markLogo={settings.markLogo}
+      businessName={settings.businessName}
+      right={footerRight ?? new URL(SITE).host}
+    />
+    {floatCta && <a href="/contact" class="btn btn-gold float-cta" id="floatCta">Get a quote</a>}
+
+    <script is:inline>
+      // Netlify Identity invite/recovery links land on the site root; forward them to the CMS.
+      if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) {
+        location.replace('/admin/' + location.hash);
+      }
+    </script>
+    <script>
+      const floatCta = document.getElementById('floatCta');
+      if (floatCta) {
+        window.addEventListener('scroll', () => {
+          floatCta.classList.toggle('visible', window.scrollY > 420);
+        });
+      }
+      const logoReactive = document.getElementById('logoReactive');
+      const logoMark = document.getElementById('logoReactiveMark');
+      if (logoReactive && logoMark) {
+        logoReactive.addEventListener('mousemove', (e) => {
+          const rect = logoReactive.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          logoMark.style.transform = `rotateY(${x * 22}deg) rotateX(${y * -22}deg) scale(1.04)`;
+        });
+        logoReactive.addEventListener('mouseleave', () => {
+          logoMark.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+        });
+      }
+    </script>
+  </body>
+</html>

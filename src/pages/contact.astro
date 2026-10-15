@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { getPage, getSettings } from '../lib/content';
+
+const page = await getPage('contact');
+const settings = await getSettings();
+---
+
+<Base
+  title={page.metaTitle}
+  description={page.metaDescription}
+  ogImage={page.ogImage}
+  noindex={page.noindex}
+  current="contact"
+  floatCta={false}
+  footerRight={settings.email}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]}
+>
+  <section class="hero-simple">
+    <div class="eyebrow">Contact</div>
+    <h1>Let us build your plan.</h1>
+    <p class="sub">Tell us a bit about your business and what you are trying to achieve. We will follow up with a plan built around your goals, no pricing guesswork, just a quote built for you.</p>
+  </section>
+
+  <section class="contact-grid">
+    <div class="info-card">
+      <div class="info-row">
+        <div class="info-icon">✉</div>
+        <div>
+          <h3>Email</h3>
+          <a href={`mailto:${settings.email}`}>{settings.email}</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">◆</div>
+        <div>
+          <h3>Response time</h3>
+          <p>We typically reply within one business day.</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">◈</div>
+        <div>
+          <h3>Who we work with</h3>
+          <p>Growing businesses of every size, including clients with over $100 million in combined revenue.</p>
+        </div>
+      </div>
+    </div>
+
+    <form id="quoteForm" name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quote" />
+      <p style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" /></label>
+      </p>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-name">Full name</label>
+          <input id="f-name" type="text" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="field">
+          <label for="f-company">Company name</label>
+          <input id="f-company" type="text" name="company" placeholder="Your business" />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" type="email" name="email" placeholder="jane@company.com" required />
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" type="tel" name="phone" placeholder="(555) 000 0000" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-revenue">Annual company revenue</label>
+        <select id="f-revenue" name="revenue">
+          <option>Under $1M</option>
+          <option>$1M to $10M</option>
+          <option>$10M to $50M</option>
+          <option>$50M to $100M</option>
+          <option>Over $100M</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Services you are interested in</label>
+        <div class="checkbox-group">
+          <label class="checkbox-pill"><input type="checkbox" name="services" value="Google Ads" />Google Ads</label>
+          <label class="checkbox-pill"><input type="checkbox" name="services" value="Meta & social" />Meta & social</label>
+          <label class="checkbox-pill"><input type="checkbox" name="services" value="SEO" />SEO</label>
+          <label class="checkbox-pill"><input type="checkbox" name="services" value="Reporting & analytics" />Reporting & analytics</label>
+          <label class="checkbox-pill"><input type="checkbox" name="services" value="Consultation" />Consultation</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-message">Tell us about your business</label>
+        <textarea id="f-message" name="message" placeholder="What are you trying to achieve?"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold">Get a quote</button>
+      <p class="form-note">We will never share your information. No pricing is shared publicly, every quote is built around your business.</p>
+    </form>
+  </section>
+</Base>

@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostCard from './PostCard.astro';
+import Pagination from './Pagination.astro';
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+  categoryTitles: Record<string, string>;
+  current?: number;
+  total?: number;
+  search?: boolean;
+}
+const { posts, categoryTitles, current = 1, total = 1, search = false } = Astro.props;
+---
+
+{
+  search && (
+    <form class="blog-search" role="search" action="/blog" method="get">
+      <input type="search" name="s" placeholder="Search articles" aria-label="Search articles" />
+      <button type="submit" class="btn btn-gold">Search</button>
+    </form>
+  )
+}
+{
+  posts.length === 0 ? (
+    <p class="empty-state">New articles are on the way.</p>
+  ) : (
+    <div class="post-grid" id="postGrid">
+      {posts.map((post) => <PostCard post={post} categoryTitles={categoryTitles} />)}
+    </div>
+  )
+}
+<Pagination current={current} total={total} />

@@ -1,0 +1,18 @@
+---
+import { renderInline } from '../lib/content';
+interface Props {
+  items: { question: string; answer: string }[];
+}
+const { items } = Astro.props;
+---
+
+<div class="faq">
+  {
+    items.map((i) => (
+      <details>
+        <summary>{i.question}</summary>
+        <p class="faq-answer" set:html={renderInline(i.answer)} />
+      </details>
+    ))
+  }
+</div>

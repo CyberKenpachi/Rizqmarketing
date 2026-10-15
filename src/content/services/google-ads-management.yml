@@ -1,0 +1,64 @@
+slug: google-ads-management
+title: "Google Ads management"
+order: 1
+icon: "◈"
+serviceType: "Google Ads / PPC management"
+cardSummary: "Search and display campaigns built to bring in more qualified leads for less."
+summary: "We plan, build, and manage Google Ads campaigns across Search and Display, matched to the way your customers actually search for what you offer."
+outcomes:
+  - "More qualified leads at a lower cost per lead"
+  - "Ad spend focused on real buyers instead of wasted clicks"
+  - "Clear visibility into what your budget is producing"
+quoteLabel: "Get a quote for Google Ads"
+metaTitle: "Google Ads Management for Growing Businesses | Rizq Marketing"
+metaDescription: "Search and display campaigns built to bring in more qualified leads for less. Get a custom Google Ads quote from Rizq Marketing."
+noindex: false
+hero:
+  eyebrow: "Google Ads management"
+  headline: "Google Ads built to bring in qualified leads."
+  subhead: "Placeholder copy: we plan, build, and manage Google Ads campaigns matched to the way your customers actually search."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing Google Ads management"
+  ctaLabel: "Get a quote"
+why:
+  heading: "Why Google Ads management?"
+  paragraph: "Placeholder copy: Google Ads puts your business in front of people at the moment they are searching for what you offer. Careful management keeps spend focused on buyers instead of wasted clicks."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing search intent"
+  benefits:
+    - { icon: "◈", label: "Reach buyers who are already searching" }
+    - { icon: "◎", label: "Spend focused on real buyers" }
+    - { icon: "◆", label: "Clear visibility into results" }
+breakdown:
+  heading: "What Google Ads management includes"
+  subhead: "Placeholder copy: every part of the account is planned, built, and managed for you."
+  cards:
+    - { icon: "◈", title: "Search campaigns", text: "Placeholder copy: campaigns matched to the terms your customers search." }
+    - { icon: "◎", title: "Display campaigns", text: "Placeholder copy: visual campaigns that keep your brand in front of the right audience." }
+    - { icon: "◐", title: "Keyword research", text: "Placeholder copy: research that finds the searches worth paying for." }
+    - { icon: "◆", title: "Ongoing optimization", text: "Placeholder copy: regular reviews to improve cost per lead over time." }
+results:
+  heading: "Results you can measure and explain"
+  paragraph: "Placeholder copy: every campaign is tracked against your goals so you always know what your budget is producing."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing measurable results"
+  ctaLabel: "Get a quote"
+process:
+  heading: "How it works"
+  subhead: ""
+  steps:
+    - { title: "Discovery", text: "Placeholder copy: we learn your business, goals, and budget." }
+    - { title: "Build and launch", text: "Placeholder copy: we build your campaigns and launch them." }
+    - { title: "Optimize and report", text: "Placeholder copy: we refine performance and report in plain language." }
+faqHeading: "Common questions about Google Ads management"
+faq:
+  - question: "How much does Google Ads management cost?"
+    answer: "Pricing depends on your business size, goals, and ad spend, so we do not publish flat rates. Every engagement starts with a consultation and a quote built around your budget."
+  - question: "Do you run Google Ads campaigns in Spanish?"
+    answer: "Yes. We build campaigns for both English and Spanish speaking audiences."
+  - question: "How do I get started?"
+    answer: "Send a request on our [Contact page](/contact) and we typically reply within one business day."
+closing:
+  heading: "Ready to grow with Google Ads?"
+  text: "Tell us about your business and we will put together a plan built around your goals."
+  ctaLabel: "Get a quote"

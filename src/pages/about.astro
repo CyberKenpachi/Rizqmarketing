@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { getPage } from '../lib/content';
+
+const page = await getPage('about');
+---
+
+<Base
+  title={page.metaTitle}
+  description={page.metaDescription}
+  ogImage={page.ogImage}
+  noindex={page.noindex}
+  current="about"
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]}
+>
+  <section class="hero-simple">
+    <div class="eyebrow">About us</div>
+    <h1>Marketing built for businesses that mean business.</h1>
+    <p class="sub">We are a marketing agency built around one idea: every dollar you spend should be able to explain itself.</p>
+  </section>
+
+  <section class="sec" style="padding-top:0;">
+    <div class="story">
+      <div class="story-mark">
+        <svg viewBox="0 0 300 280" width="100%" height="100%" style="overflow:visible" aria-hidden="true">
+          <line x1="0" y1="240" x2="300" y2="240" stroke="var(--line)" stroke-width="1"></line>
+          <line x1="0" y1="150" x2="300" y2="150" stroke="var(--line)" stroke-width="1"></line>
+          <path class="draw-line" d="M10,230 L70,200 L120,175 L170,110 L230,70 L280,30" fill="none" stroke="var(--gold-soft)" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="10" cy="230" r="4" fill="var(--gold-soft)"></circle>
+          <circle cx="70" cy="200" r="4" fill="var(--gold-soft)"></circle>
+          <circle cx="120" cy="175" r="4" fill="var(--gold-soft)"></circle>
+          <circle cx="170" cy="110" r="4" fill="var(--gold-soft)"></circle>
+          <circle cx="230" cy="70" r="4" fill="var(--gold-soft)"></circle>
+          <circle class="node-pulse" cx="280" cy="30" r="6" fill="var(--gold)"></circle>
+          <circle cx="280" cy="30" r="14" fill="none" stroke="var(--gold-soft)" stroke-width="1" opacity="0.4"></circle>
+        </svg>
+      </div>
+      <div>
+        <div class="eyebrow">Our story</div>
+        <h2 style="font-size:28px; margin:14px 0 20px; color:var(--paper);">Why we started this agency</h2>
+        <p>We started this agency because too many growing businesses were being sold generic campaigns and vague reporting. We wanted to build something different: marketing shaped around the business it is actually for.</p>
+        <p>Today we work with companies at very different stages, from businesses just getting serious about paid marketing to established companies with over $100 million in combined revenue. What stays the same is the standard we hold ourselves to.</p>
+        <p>Every engagement starts with the same goal, results you can measure and explain, not just activity you have to take our word for.</p>
+      </div>
+    </div>
+  </section>
+
+  <StatsStrip />
+
+  <section class="sec">
+    <div class="sec-head">
+      <div class="eyebrow">What we value</div>
+      <h2>The standard we hold every engagement to.</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">◈</div>
+        <h3>Transparency</h3>
+        <p>You always know where your budget is going and what it is producing.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">◎</div>
+        <h3>Accountability</h3>
+        <p>We measure our work the same way you measure your business, by results.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">◐</div>
+        <h3>Partnership</h3>
+        <p>We work as an extension of your team, not an outside vendor you have to manage.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">◆</div>
+        <h3>Focus</h3>
+        <p>We would rather do a few things well for you than everything at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0;">
+    <CtaBanner />
+  </section>
+</Base>

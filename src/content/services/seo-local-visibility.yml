@@ -1,0 +1,64 @@
+slug: seo-local-visibility
+title: "SEO & local visibility"
+order: 3
+icon: "◐"
+serviceType: "Search engine optimization"
+cardSummary: "Stronger search rankings and local visibility, so more of the right customers find you first."
+summary: "We improve how your business shows up in search results and local listings, so more of the right customers find you first."
+outcomes:
+  - "Stronger rankings for the terms your customers search"
+  - "Improved visibility in local search results and maps"
+  - "A stronger, more consistent online presence overall"
+quoteLabel: "Get a quote for SEO"
+metaTitle: "SEO & Local Visibility Services | Rizq Marketing"
+metaDescription: "Stronger search rankings and local visibility so more of the right customers find you first. Get a custom SEO quote from Rizq Marketing."
+noindex: false
+hero:
+  eyebrow: "SEO & local visibility"
+  headline: "Be the business customers find first."
+  subhead: "Placeholder copy: we improve how your business shows up in search results, local listings, and maps."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing search visibility"
+  ctaLabel: "Get a quote"
+why:
+  heading: "Why SEO and local visibility?"
+  paragraph: "Placeholder copy: most customers start with a search. Strong rankings and accurate local listings put your business in front of them, and the gains build over time."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing local search"
+  benefits:
+    - { icon: "◐", label: "Stronger rankings" }
+    - { icon: "◎", label: "Visible in local results and maps" }
+    - { icon: "◆", label: "Gains that build over time" }
+breakdown:
+  heading: "What SEO includes"
+  subhead: "Placeholder copy: the work that improves how your business shows up in search."
+  cards:
+    - { icon: "◐", title: "Keyword strategy", text: "Placeholder copy: focus on the terms your customers search." }
+    - { icon: "◎", title: "Local listings", text: "Placeholder copy: accurate, consistent listings and map visibility." }
+    - { icon: "◈", title: "On-page optimization", text: "Placeholder copy: improvements to your pages and content." }
+    - { icon: "◆", title: "Tracking and reporting", text: "Placeholder copy: regular updates on rankings and visibility." }
+results:
+  heading: "Visibility that compounds"
+  paragraph: "Placeholder copy: SEO is a longer-term investment. We track progress and report on it in plain language."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing growth in search visibility"
+  ctaLabel: "Get a quote"
+process:
+  heading: "How it works"
+  subhead: ""
+  steps:
+    - { title: "Audit", text: "Placeholder copy: we review your current search presence." }
+    - { title: "Implement", text: "Placeholder copy: we make the improvements that matter most." }
+    - { title: "Grow", text: "Placeholder copy: we keep building authority and report on progress." }
+faqHeading: "Common questions about SEO"
+faq:
+  - question: "How long does SEO take to show results?"
+    answer: "Most businesses start seeing measurable movement in rankings and local visibility within 3 to 6 months, with stronger gains building over time as authority and content grow."
+  - question: "Do you handle local SEO?"
+    answer: "Yes. We improve visibility in local search results and maps."
+  - question: "How do I get a quote?"
+    answer: "Use the form on our [Contact page](/contact) and we typically reply within one business day."
+closing:
+  heading: "Ready to be found first?"
+  text: "Tell us about your business and we will put together a plan built around your goals."
+  ctaLabel: "Get a quote"

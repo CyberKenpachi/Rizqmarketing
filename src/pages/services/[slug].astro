@@ -1,0 +1,147 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { getServices, slugOf } from '../../lib/content';
+import { faqNode, serviceNode } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const services = await getServices();
+  return services.map((service) => ({ params: { slug: slugOf(service) }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const d = service.data;
+const slug = slugOf(service);
+const nodes = [
+  serviceNode({ title: d.title, slug, serviceType: d.serviceType, summary: d.summary, description: d.summary }),
+  ...(d.faq.length ? [faqNode(d.faq)] : []),
+];
+---
+
+<Base
+  title={d.metaTitle}
+  description={d.metaDescription}
+  ogImage={d.ogImage}
+  noindex={d.noindex}
+  current="services"
+  nodes={nodes}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: d.title, path: `/services/${slug}` },
+  ]}
+>
+  <section class="svc-hero">
+    <div>
+      <div class="eyebrow">{d.hero.eyebrow}</div>
+      <h1>{d.hero.headline}</h1>
+      <p class="sub">{d.hero.subhead}</p>
+      <div class="hero-ctas">
+        <a href="/contact" class="btn btn-gold">{d.hero.ctaLabel ?? 'Get a quote'}</a>
+      </div>
+    </div>
+    {
+      d.hero.image && (
+        <div class="media-frame">
+          <img src={d.hero.image} alt={d.hero.imageAlt ?? ''} width="800" height="600" fetchpriority="high" decoding="async" />
+        </div>
+      )
+    }
+  </section>
+
+  <section class="sec" style="padding-top:24px;">
+    <div class="split">
+      {
+        d.why.image && (
+          <div class="media-frame">
+            <img src={d.why.image} alt={d.why.imageAlt ?? ''} width="800" height="600" loading="lazy" decoding="async" />
+          </div>
+        )
+      }
+      <div>
+        <h2>{d.why.heading}</h2>
+        <p>{d.why.paragraph}</p>
+        <div class="benefits">
+          {
+            d.why.benefits.map((b) => (
+              <div class="benefit">
+                <div class="service-icon">{b.icon}</div>
+                <span>{b.label}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0;">
+    <div class="sec-head">
+      <h2>{d.breakdown.heading}</h2>
+      <p>{d.breakdown.subhead}</p>
+    </div>
+    <div class="services-grid">
+      {
+        d.breakdown.cards.map((c) => (
+          <div class="service-card">
+            <div class="service-icon">{c.icon}</div>
+            <h3>{c.title}</h3>
+            <p style="margin-bottom:0;">{c.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0;">
+    <div class="split reverse">
+      <div>
+        <h2>{d.results.heading}</h2>
+        <p>{d.results.paragraph}</p>
+        <a href="/contact" class="btn btn-gold">{d.results.ctaLabel ?? 'Get a quote'}</a>
+      </div>
+      {
+        d.results.image && (
+          <div class="media-frame">
+            <img src={d.results.image} alt={d.results.imageAlt ?? ''} width="800" height="600" loading="lazy" decoding="async" />
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0;">
+    <div class="sec-head">
+      <h2>{d.process.heading}</h2>
+      {d.process.subhead && <p>{d.process.subhead}</p>}
+    </div>
+    <div class="steps">
+      {
+        d.process.steps.map((s, i) => (
+          <div class="step-card">
+            <div class="step-num">{String(i + 1).padStart(2, '0')}</div>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    d.faq.length > 0 && (
+      <section class="sec" style="padding-top:0;">
+        <div class="sec-head">
+          <div class="eyebrow">FAQ</div>
+          <h2>{d.faqHeading ?? `Common questions about ${d.title.toLowerCase()}`}</h2>
+        </div>
+        <Faq items={d.faq} />
+      </section>
+    )
+  }
+
+  <section class="sec" style="padding-top:0;">
+    <CtaBanner heading={d.closing.heading} text={d.closing.text} label={d.closing.ctaLabel ?? 'Get a quote'} />
+  </section>
+</Base>

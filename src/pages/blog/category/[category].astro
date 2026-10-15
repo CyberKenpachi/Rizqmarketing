@@ -1,0 +1,36 @@
+---
+import Base from '../../../layouts/Base.astro';
+import BlogListing from '../../../components/BlogListing.astro';
+import { getCategoryIndex, getSettings } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const cats = await getCategoryIndex();
+  return cats.map((category) => ({ params: { category: category.id }, props: { category } }));
+}
+
+const { category } = Astro.props;
+const settings = await getSettings();
+const cats = await getCategoryIndex();
+const categoryTitles = Object.fromEntries(cats.map((c) => [c.id, c.title]));
+const meta = category.entry?.data;
+const title = meta?.metaTitle ?? `${category.title} Articles | ${settings.businessName}`;
+const description = meta?.metaDescription ?? meta?.description ?? `Articles about ${category.title} from ${settings.businessName}.`;
+---
+
+<Base
+  title={title}
+  description={description}
+  current="blog"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: category.title, path: `/blog/category/${category.id}` },
+  ]}
+>
+  <section class="hero-simple">
+    <div class="eyebrow">Category</div>
+    <h1>{category.title}</h1>
+    {meta?.description && <p class="sub">{meta.description}</p>}
+  </section>
+  <BlogListing posts={category.posts} categoryTitles={categoryTitles} />
+</Base>

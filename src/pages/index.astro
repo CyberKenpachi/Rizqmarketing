@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { getPage, getServices, slugOf } from '../lib/content';
+
+const page = await getPage('home');
+const services = await getServices();
+---
+
+<Base title={page.metaTitle} description={page.metaDescription} ogImage={page.ogImage} noindex={page.noindex} current="home">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Performance marketing, engineered</div>
+      <h1>Marketing<br />built for <em>scale.</em></h1>
+      <p class="sub">We build and run Google Ads, Meta, and SEO campaigns for growing businesses, including clients with over $100 million in combined revenue.</p>
+      <div class="hero-ctas">
+        <a href="/contact" class="btn btn-gold">Get a quote</a>
+        <a href="/services" class="btn btn-ghost">View our services</a>
+      </div>
+    </div>
+    <div class="hero-graphic" id="logoReactive">
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+      <div class="orbit-dot dot-a"></div>
+      <div class="orbit-dot dot-b"></div>
+      <div class="orbit-dot dot-c"></div>
+      <div class="logo-glow"></div>
+      <img src="/assets/rizq-mark.png" alt="Rizq Marketing" class="logo-reactive-mark" id="logoReactiveMark" width="200" height="200" fetchpriority="high" />
+    </div>
+  </section>
+
+  <StatsStrip />
+
+  <section class="sec" id="services">
+    <div class="sec-head">
+      <div class="eyebrow">What we do</div>
+      <h2>Marketing built around your buyers.</h2>
+      <p>Every channel we manage is built on research and data, not guesswork, designed to find the buyers you actually want.</p>
+    </div>
+    <div class="services-grid">
+      {
+        services.map((s) => (
+          <div class="service-card">
+            <div class="service-icon">{s.data.icon}</div>
+            <h3>{s.data.title}</h3>
+            <p>{s.data.cardSummary}</p>
+            <a href={`/services/${slugOf(s)}`}>Learn more →</a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0;">
+    <CtaBanner />
+  </section>
+</Base>

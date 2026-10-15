@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { slugOf, formatDate, excerpt } from '../lib/content';
+interface Props {
+  post: CollectionEntry<'blog'>;
+  categoryTitles: Record<string, string>;
+}
+const { post, categoryTitles } = Astro.props;
+const href = `/blog/${slugOf(post)}`;
+const summary = post.data.metaDescription ?? excerpt(post.body);
+---
+
+<article class="post-card">
+  {
+    post.data.featuredImage && (
+      <a href={href} tabindex="-1" aria-hidden="true">
+        <div class="media-frame">
+          <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ''} width="640" height="360" loading="lazy" decoding="async" />
+        </div>
+      </a>
+    )
+  }
+  <div class="post-card-body">
+    {
+      post.data.categories.length > 0 && (
+        <div class="chips">
+          {post.data.categories.map((c) => (
+            <a class="chip" href={`/blog/category/${c}`}>{categoryTitles[c] ?? c}</a>
+          ))}
+        </div>
+      )
+    }
+    <h2><a href={href}>{post.data.title}</a></h2>
+    <p>{summary}</p>
+    <div class="post-meta"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time></div>
+  </div>
+</article>

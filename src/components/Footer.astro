@@ -1,0 +1,29 @@
+---
+interface Props {
+  showBlog: boolean;
+  markLogo: string;
+  businessName: string;
+  right: string;
+}
+const { showBlog, markLogo, businessName, right } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="/" class="logo"><img src={markLogo} alt={businessName} class="logo-mark" width="24" height="24" loading="lazy" />rizq <span>marketing</span></a>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        {showBlog && <a href="/blog">Blog</a>}
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {year} {businessName}</span>
+      <span>{right}</span>
+    </div>
+  </div>
+</footer>

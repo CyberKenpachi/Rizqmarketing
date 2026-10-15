@@ -1,0 +1,26 @@
+---
+interface Props {
+  current?: string;
+  showBlog: boolean;
+  markLogo: string;
+  businessName: string;
+}
+const { current, showBlog, markLogo, businessName } = Astro.props;
+const links = [
+  { key: 'home', href: '/', label: 'Home' },
+  { key: 'about', href: '/about', label: 'About' },
+  { key: 'services', href: '/services', label: 'Services' },
+  ...(showBlog ? [{ key: 'blog', href: '/blog', label: 'Blog' }] : []),
+  { key: 'contact', href: '/contact', label: 'Contact' },
+];
+---
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src={markLogo} alt={businessName} class="logo-mark" width="24" height="24" />rizq <span>marketing</span></a>
+    <div class="nav-links">
+      {links.map((l) => <a href={l.href} class={current === l.key ? 'active' : undefined}>{l.label}</a>)}
+    </div>
+    <a href="/contact" class="btn btn-gold">Get a quote</a>
+  </div>
+</nav>

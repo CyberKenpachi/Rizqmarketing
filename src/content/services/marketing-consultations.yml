@@ -1,0 +1,62 @@
+slug: marketing-consultations
+title: "Marketing consultations"
+order: 5
+icon: "◉"
+serviceType: "Marketing consulting"
+cardSummary: "Individual sessions to review your current marketing and map out where the biggest opportunities are."
+summary: "We offer individual consultations to review your current marketing and identify where your biggest opportunities are."
+outcomes:
+  - "An outside perspective on your current marketing"
+  - "A clear view of where your budget could work harder"
+  - "Direct answers to your marketing questions"
+quoteLabel: "Get a quote for a consultation"
+metaTitle: "Marketing Consultations | Rizq Marketing"
+metaDescription: "One-on-one sessions to review your marketing and find your biggest opportunities. Book a consultation with Rizq Marketing."
+noindex: false
+hero:
+  eyebrow: "Marketing consultations"
+  headline: "An outside look at your marketing."
+  subhead: "Placeholder copy: individual sessions to review your current marketing and map out the biggest opportunities."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing a consultation"
+  ctaLabel: "Get a quote"
+why:
+  heading: "Why a marketing consultation?"
+  paragraph: "Placeholder copy: a fresh perspective shows where budget is underperforming and where it could work harder, with direct answers to your questions."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing an outside perspective"
+  benefits:
+    - { icon: "◉", label: "Outside perspective" }
+    - { icon: "◈", label: "Find where budget can work harder" }
+    - { icon: "◎", label: "Direct answers to your questions" }
+breakdown:
+  heading: "What a consultation covers"
+  subhead: "Placeholder copy: a focused review built around your business."
+  cards:
+    - { icon: "◉", title: "Marketing review", text: "Placeholder copy: a look at what you are doing today." }
+    - { icon: "◈", title: "Budget review", text: "Placeholder copy: where spend is and is not paying off." }
+    - { icon: "◎", title: "Opportunity map", text: "Placeholder copy: the biggest opportunities, prioritized." }
+    - { icon: "◆", title: "Q&A", text: "Placeholder copy: time for your specific questions." }
+results:
+  heading: "A clear plan to act on"
+  paragraph: "Placeholder copy: you leave with a clear view of what to do next."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing a clear plan"
+  ctaLabel: "Get a quote"
+process:
+  heading: "How it works"
+  subhead: ""
+  steps:
+    - { title: "Share your goals", text: "Placeholder copy: tell us about your business." }
+    - { title: "Review", text: "Placeholder copy: we review your current marketing." }
+    - { title: "Plan", text: "Placeholder copy: we map out your biggest opportunities." }
+faqHeading: "Common questions about consultations"
+faq:
+  - question: "What happens during a marketing consultation?"
+    answer: "We review your current marketing, identify where your budget is underperforming, and map out the biggest opportunities, with direct answers to your specific questions."
+  - question: "How do I book one?"
+    answer: "Use the form on our [Contact page](/contact) and we typically reply within one business day."
+closing:
+  heading: "Ready to talk it through?"
+  text: "Tell us about your business and we will put together a plan built around your goals."
+  ctaLabel: "Get a quote"

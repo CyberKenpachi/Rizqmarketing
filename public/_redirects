@@ -1,0 +1,4 @@
+# Netlify redirects. One rule per line:  /old-path  /new-path  301
+# Example (uncomment to use):
+# /old-service-page  /services/google-ads-management  301
+# Rules are matched top to bottom. See https://docs.netlify.com/manage/routing/redirects/overview/

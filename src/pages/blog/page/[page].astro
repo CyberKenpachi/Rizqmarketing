@@ -1,0 +1,42 @@
+---
+import Base from '../../../layouts/Base.astro';
+import BlogListing from '../../../components/BlogListing.astro';
+import { getPage, getPosts, getCategoryIndex, PAGE_SIZE } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const total = Math.ceil(posts.length / PAGE_SIZE);
+  return Array.from({ length: Math.max(0, total - 1) }, (_, i) => ({ params: { page: String(i + 2) } }));
+}
+
+const current = Number(Astro.params.page);
+const meta = await getPage('blog');
+const posts = await getPosts();
+const cats = await getCategoryIndex();
+const categoryTitles = Object.fromEntries(cats.map((c) => [c.id, c.title]));
+const total = Math.ceil(posts.length / PAGE_SIZE);
+const slice = posts.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
+const pageUrl = (n: number) => (n === 1 ? '/blog' : `/blog/page/${n}`);
+---
+
+<Base
+  title={`${meta.metaTitle} – Page ${current}`}
+  description={meta.metaDescription}
+  ogImage={meta.ogImage}
+  noindex={meta.noindex}
+  current="blog"
+  prev={pageUrl(current - 1)}
+  next={current < total ? pageUrl(current + 1) : undefined}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: `Page ${current}`, path: pageUrl(current) },
+  ]}
+>
+  <section class="hero-simple">
+    <div class="eyebrow">Blog · Page {current}</div>
+    <h1>Marketing insights for growing businesses.</h1>
+    <p class="sub">Practical guidance on Google Ads, Meta advertising, SEO and local visibility.</p>
+  </section>
+  <BlogListing posts={slice} categoryTitles={categoryTitles} current={current} total={total} />
+</Base>

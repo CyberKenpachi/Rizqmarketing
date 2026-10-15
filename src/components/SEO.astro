@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  siteName: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  prev?: string;
+  next?: string;
+}
+const { title, description, canonical, image, type = 'website', noindex = false, siteName, publishedTime, modifiedTime, prev, next } =
+  Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+{prev && <link rel="prev" href={prev} />}
+{next && <link rel="next" href={next} />}
+
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+{image && <meta property="og:image" content={image} />}
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{image && <meta name="twitter:image" content={image} />}

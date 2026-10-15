@@ -1,0 +1,62 @@
+slug: reporting-analytics
+title: "Reporting & analytics"
+order: 4
+icon: "◆"
+serviceType: "Marketing analytics and reporting"
+cardSummary: "Clear, client ready performance reporting so you always know what's working and where budget is going."
+summary: "We give you clear, straightforward reporting so you always know what is working and where your budget is going."
+outcomes:
+  - "Regular performance updates in plain language"
+  - "Full visibility into spend and results"
+  - "Insights you can use to make bigger business decisions"
+quoteLabel: "Get a quote for reporting"
+metaTitle: "Marketing Reporting & Analytics | Rizq Marketing"
+metaDescription: "Clear performance reporting so you always know what's working and where your budget is going. Get a custom quote from Rizq Marketing."
+noindex: false
+hero:
+  eyebrow: "Reporting & analytics"
+  headline: "Know exactly what your marketing is producing."
+  subhead: "Placeholder copy: clear, client-ready reporting that shows what is working and where budget is going."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing analytics"
+  ctaLabel: "Get a quote"
+why:
+  heading: "Why reporting and analytics?"
+  paragraph: "Placeholder copy: you cannot improve what you cannot see. Plain-language reporting turns marketing data into decisions you can act on."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing clear reporting"
+  benefits:
+    - { icon: "◆", label: "Plain-language updates" }
+    - { icon: "◈", label: "Full visibility into spend" }
+    - { icon: "◎", label: "Insights for bigger decisions" }
+breakdown:
+  heading: "What reporting includes"
+  subhead: "Placeholder copy: the pieces that keep you informed."
+  cards:
+    - { icon: "◆", title: "Performance reports", text: "Placeholder copy: regular updates on results." }
+    - { icon: "◈", title: "Spend tracking", text: "Placeholder copy: clear view of where budget goes." }
+    - { icon: "◎", title: "Goal tracking", text: "Placeholder copy: measurement tied to your business goals." }
+    - { icon: "◐", title: "Recommendations", text: "Placeholder copy: next steps based on what the data shows." }
+results:
+  heading: "Decisions backed by data"
+  paragraph: "Placeholder copy: reporting gives you the full picture so every dollar can explain itself."
+  image: "/images/uploads/placeholder.svg"
+  imageAlt: "Illustration representing data-backed decisions"
+  ctaLabel: "Get a quote"
+process:
+  heading: "How it works"
+  subhead: ""
+  steps:
+    - { title: "Set goals", text: "Placeholder copy: we agree on what success looks like." }
+    - { title: "Track", text: "Placeholder copy: we connect and monitor your data." }
+    - { title: "Report", text: "Placeholder copy: you receive clear updates and next steps." }
+faqHeading: "Common questions about reporting"
+faq:
+  - question: "How often will I receive reports?"
+    answer: "Placeholder answer: reporting cadence is set during onboarding."
+  - question: "How do I get a quote?"
+    answer: "Use the form on our [Contact page](/contact) and we typically reply within one business day."
+closing:
+  heading: "Ready for clearer reporting?"
+  text: "Tell us about your business and we will put together a plan built around your goals."
+  ctaLabel: "Get a quote"

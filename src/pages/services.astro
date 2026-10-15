@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { getPage, getServices, slugOf } from '../lib/content';
+import { faqNode, serviceListNode } from '../lib/schema';
+
+const page = await getPage('services');
+const services = await getServices();
+const nodes = [
+  serviceListNode(
+    services.map((s) => ({
+      title: s.data.title,
+      slug: slugOf(s),
+      serviceType: s.data.serviceType,
+      summary: s.data.summary,
+      description: s.data.summary,
+    })),
+  ),
+  ...(page.faq.length ? [faqNode(page.faq)] : []),
+];
+---
+
+<Base
+  title={page.metaTitle}
+  description={page.metaDescription}
+  ogImage={page.ogImage}
+  noindex={page.noindex}
+  current="services"
+  nodes={nodes}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }]}
+>
+  <section class="hero-simple">
+    <div class="eyebrow">Services</div>
+    <h1>Everything you need to grow, in one place.</h1>
+    <p class="sub">We work with businesses of every size, including clients with over $100 million in combined revenue, to build marketing that earns its budget back.</p>
+  </section>
+
+  <section>
+    {
+      services.map((s) => (
+        <div class="service-detail" id={slugOf(s)}>
+          <div class="service-icon-lg">{s.data.icon}</div>
+          <div>
+            <h2>{s.data.title}</h2>
+            <p class="desc">{s.data.summary}</p>
+            <ul class="outcomes">
+              {s.data.outcomes.map((o) => <li>{o}</li>)}
+            </ul>
+            <div class="service-links">
+              <a href={`/services/${slugOf(s)}`} class="service-link">Learn more →</a>
+              <a href="/contact" class="service-link">{s.data.quoteLabel ?? 'Get a quote'} →</a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  {
+    page.faq.length > 0 && (
+      <section class="sec" style="padding-top:0;">
+        <div class="sec-head">
+          <div class="eyebrow">FAQ</div>
+          <h2>Common questions about our services.</h2>
+          <p>Straight answers about how we work, what's included, and what to expect.</p>
+        </div>
+        <Faq items={page.faq} />
+      </section>
+    )
+  }
+
+  <StatsStrip />
+
+  <div style="margin:80px 0;">
+    <CtaBanner />
+  </div>
+</Base>

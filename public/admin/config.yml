@@ -1,0 +1,269 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Lets `npx decap-server` edit local files while developing on localhost. Ignored in production.
+local_backend: true
+
+publish_mode: editorial_workflow
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+site_url: https://rizqmarketing.com
+display_url: https://rizqmarketing.com
+logo_url: https://rizqmarketing.com/assets/rizq-mark.png
+locale: en
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ---------------------------------------------------------------- Pages
+  - name: pages
+    label: Pages
+    label_singular: Page
+    files:
+      - label: Home
+        name: home
+        file: src/content/pages/home.yml
+        fields: &seo_fields
+          - { label: Meta title, name: metaTitle, widget: string, hint: "Shown in Google results and browser tabs. Aim for 50-60 characters." }
+          - { label: Meta description, name: metaDescription, widget: text, hint: "Shown under the title in Google results. Aim for 150-160 characters." }
+          - { label: Open Graph image, name: ogImage, widget: image, required: false, hint: "Image shown when the page is shared. Leave empty to use the default from Site Settings. 1200x630 works best." }
+          - { label: Noindex (hide from search engines), name: noindex, widget: boolean, default: false, required: false }
+      - label: About
+        name: about
+        file: src/content/pages/about.yml
+        fields: *seo_fields
+      - label: Contact
+        name: contact
+        file: src/content/pages/contact.yml
+        fields: *seo_fields
+      - label: Blog (index page)
+        name: blog
+        file: src/content/pages/blog.yml
+        fields: *seo_fields
+      - label: Services (index page)
+        name: services
+        file: src/content/pages/services.yml
+        fields:
+          - { label: Meta title, name: metaTitle, widget: string, hint: "Aim for 50-60 characters." }
+          - { label: Meta description, name: metaDescription, widget: text, hint: "Aim for 150-160 characters." }
+          - { label: Open Graph image, name: ogImage, widget: image, required: false }
+          - { label: Noindex (hide from search engines), name: noindex, widget: boolean, default: false, required: false }
+          - label: FAQ
+            name: faq
+            widget: list
+            required: false
+            summary: "{{fields.question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text, hint: "Plain text. Links: [link text](/contact)" }
+
+  # ------------------------------------------------------------- Services
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: src/content/services
+    extension: yml
+    format: yml
+    create: true
+    identifier_field: title
+    slug: "{{slug}}"
+    summary: "{{order}}. {{title}}"
+    sortable_fields: [order, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Lowercase letters, numbers and hyphens only"], hint: "Page address: /services/your-slug. Changing it later breaks the old URL; add a redirect (see CONTRIBUTING.md)." }
+      - { label: Order, name: order, widget: number, value_type: int, hint: "Position on the Home and Services pages (1 = first)." }
+      - label: Icon
+        name: icon
+        widget: select
+        options: ["◈", "◎", "◐", "◆", "◉", "✦", "★", "▲", "✓", "◇", "○"]
+      - { label: Service type (for Google), name: serviceType, widget: string, required: false, hint: "Shown in structured data, e.g. Google Ads / PPC management" }
+      - { label: Card summary (Home page card), name: cardSummary, widget: text }
+      - { label: Summary (Services page), name: summary, widget: text }
+      - { label: Outcomes (Services page bullets), name: outcomes, widget: list, field: { label: Outcome, name: outcome, widget: string } }
+      - { label: Quote link label, name: quoteLabel, widget: string, required: false, hint: "e.g. Get a quote for Google Ads" }
+      - { label: Meta title, name: metaTitle, widget: string }
+      - { label: Meta description, name: metaDescription, widget: text }
+      - { label: Open Graph image, name: ogImage, widget: image, required: false }
+      - { label: Noindex (hide from search engines), name: noindex, widget: boolean, default: false, required: false }
+      - label: Hero
+        name: hero
+        widget: object
+        fields:
+          - { label: Eyebrow label, name: eyebrow, widget: string }
+          - { label: Headline (H1), name: headline, widget: string }
+          - { label: Subhead, name: subhead, widget: text }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt text, name: imageAlt, widget: string, required: false }
+          - { label: CTA label, name: ctaLabel, widget: string, required: false, default: "Get a quote" }
+      - label: "Why [service] section"
+        name: why
+        widget: object
+        fields:
+          - { label: Headline (H2), name: heading, widget: string }
+          - { label: Paragraph, name: paragraph, widget: text }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt text, name: imageAlt, widget: string, required: false }
+          - label: Benefits (exactly 3)
+            name: benefits
+            widget: list
+            min: 3
+            max: 3
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Icon, name: icon, widget: select, options: ["◈", "◎", "◐", "◆", "◉", "✦", "★", "▲", "✓", "◇", "○"] }
+              - { label: Label, name: label, widget: string }
+      - label: Services breakdown
+        name: breakdown
+        widget: object
+        fields:
+          - { label: Headline (H2), name: heading, widget: string }
+          - { label: Subhead, name: subhead, widget: text }
+          - label: Cards (exactly 4)
+            name: cards
+            widget: list
+            min: 4
+            max: 4
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Icon, name: icon, widget: select, options: ["◈", "◎", "◐", "◆", "◉", "✦", "★", "▲", "✓", "◇", "○"] }
+              - { label: Title (H3), name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+      - label: Results section
+        name: results
+        widget: object
+        fields:
+          - { label: Headline (H2), name: heading, widget: string }
+          - { label: Paragraph, name: paragraph, widget: text }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt text, name: imageAlt, widget: string, required: false }
+          - { label: CTA label, name: ctaLabel, widget: string, required: false, default: "Get a quote" }
+      - label: Process (3 steps)
+        name: process
+        widget: object
+        fields:
+          - { label: Headline (H2), name: heading, widget: string }
+          - { label: Subhead, name: subhead, widget: text, required: false }
+          - label: Steps (exactly 3)
+            name: steps
+            widget: list
+            min: 3
+            max: 3
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title (H3), name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+      - { label: FAQ headline (H2), name: faqHeading, widget: string, required: false }
+      - label: FAQ
+        name: faq
+        widget: list
+        required: false
+        summary: "{{fields.question}}"
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text, hint: "Plain text. Links: [link text](/contact)" }
+      - label: Closing CTA
+        name: closing
+        widget: object
+        fields:
+          - { label: Headline (H2), name: heading, widget: string }
+          - { label: Text, name: text, widget: text }
+          - { label: Button label, name: ctaLabel, widget: string, required: false, default: "Get a quote" }
+
+  # ----------------------------------------------------------- Blog posts
+  - name: blog
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: src/content/blog
+    extension: md
+    format: frontmatter
+    create: true
+    identifier_field: title
+    slug: "{{slug}}"
+    summary: "{{title}} ({{date}})"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title (H1), name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Lowercase letters, numbers and hyphens only"], hint: "Page address: /blog/your-slug" }
+      - { label: Meta title, name: metaTitle, widget: string, required: false, hint: "Aim for 50-60 characters. Leave empty to use 'Title | Rizq Marketing'." }
+      - { label: Meta description, name: metaDescription, widget: text, required: false, hint: "Aim for 150-160 characters. Leave empty to use the start of the article." }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Updated date, name: updated, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: Featured image, name: featuredImage, widget: image, required: false }
+      - { label: Featured image alt text, name: featuredImageAlt, widget: string, required: false, hint: "Describe the image for screen readers and search engines." }
+      - label: Categories
+        name: categories
+        widget: relation
+        collection: categories
+        search_fields: [title]
+        value_field: "{{slug}}"
+        display_fields: [title]
+        multiple: true
+        required: false
+      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+      - { label: Body, name: body, widget: markdown, hint: "Start headings at H2 (##). The title above is already the page's H1." }
+      - label: FAQ
+        name: faq
+        widget: list
+        required: false
+        summary: "{{fields.question}}"
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text, hint: "Plain text. Links: [link text](/contact)" }
+      - { label: Draft (do not publish), name: draft, widget: boolean, default: false, required: false }
+
+  # ------------------------------------------------------ Blog categories
+  - name: categories
+    label: Blog Categories
+    label_singular: Category
+    folder: src/content/categories
+    extension: yml
+    format: yml
+    create: true
+    identifier_field: title
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false, hint: "Intro text on the category page." }
+      - { label: Meta title, name: metaTitle, widget: string, required: false }
+      - { label: Meta description, name: metaDescription, widget: text, required: false }
+
+  # -------------------------------------------------------- Site settings
+  - name: settings
+    label: Site Settings
+    files:
+      - label: Site Settings
+        name: site
+        file: src/content/settings/site.yml
+        fields:
+          - { label: Business name, name: businessName, widget: string }
+          - { label: Description (used in structured data), name: description, widget: text }
+          - { label: Logo (full logo, used in structured data), name: logo, widget: image }
+          - { label: Mark logo (header, footer, favicon), name: markLogo, widget: image }
+          - { label: Default Open Graph image, name: defaultOgImage, widget: image }
+          - { label: Email, name: email, widget: string }
+          - { label: Phone, name: phone, widget: string, required: false }
+          - label: Address
+            name: address
+            widget: object
+            required: false
+            fields:
+              - { label: Street, name: street, widget: string, required: false }
+              - { label: City, name: city, widget: string, required: false }
+              - { label: Region / State, name: region, widget: string, required: false }
+              - { label: Postal code, name: postalCode, widget: string, required: false }
+              - { label: Country, name: country, widget: string, required: false }
+          - { label: Area served, name: areaServed, widget: string, required: false }
+          - { label: Languages (e.g. en, es), name: languages, widget: list, required: false, field: { label: Language code, name: language, widget: string } }
+          - label: Social links
+            name: socialLinks
+            widget: list
+            required: false
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
