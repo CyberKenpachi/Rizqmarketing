@@ -10,53 +10,55 @@ outcomes:
   - "Full visibility into spend and results"
   - "Insights you can use to make bigger business decisions"
 quoteLabel: "Get a quote for reporting"
-metaTitle: "Marketing Reporting & Analytics | Rizq Marketing"
-metaDescription: "Clear performance reporting so you always know what's working and where your budget is going. Get a custom quote from Rizq Marketing."
+metaTitle: "Marketing Reporting & Analytics Services | Rizq Marketing"
+metaDescription: "Make smarter marketing decisions with clear reporting and analytics. Track campaign performance, ad spend, leads, and marketing results."
 noindex: false
 hero:
   eyebrow: "Reporting & analytics"
-  headline: "Know exactly what your marketing is producing."
-  subhead: "Placeholder copy: clear, client-ready reporting that shows what is working and where budget is going."
+  headline: "Know Exactly What Your Marketing Is Producing."
+  subhead: "Understand where your marketing budget goes and what it delivers. Rizq Marketing provides clear performance reporting and analytics to help businesses measure results and make informed marketing decisions."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing analytics"
-  ctaLabel: "Get a quote"
+  ctaLabel: "Get a Quote"
 why:
-  heading: "Why reporting and analytics?"
-  paragraph: "Placeholder copy: you cannot improve what you cannot see. Plain-language reporting turns marketing data into decisions you can act on."
+  heading: "Why Reporting and Analytics?"
+  paragraph: "Marketing data should help you make better decisions, not leave you guessing. We turn campaign performance into clear insights you can use."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing clear reporting"
   benefits:
-    - { icon: "◆", label: "Plain-language updates" }
-    - { icon: "◈", label: "Full visibility into spend" }
-    - { icon: "◎", label: "Insights for bigger decisions" }
+    - { icon: "◆", label: "Easy-to-Understand Reports – See your marketing results without complicated data." }
+    - { icon: "◈", label: "Budget Transparency – Understand how your advertising spend is performing." }
+    - { icon: "◎", label: "Smarter Decisions – Identify opportunities and areas that need improvement." }
 breakdown:
-  heading: "What reporting includes"
-  subhead: "Placeholder copy: the pieces that keep you informed."
+  heading: "What Reporting Includes"
+  subhead: "Get a clearer picture of your marketing performance with essential tracking and analysis."
   cards:
-    - { icon: "◆", title: "Performance reports", text: "Placeholder copy: regular updates on results." }
-    - { icon: "◈", title: "Spend tracking", text: "Placeholder copy: clear view of where budget goes." }
-    - { icon: "◎", title: "Goal tracking", text: "Placeholder copy: measurement tied to your business goals." }
-    - { icon: "◐", title: "Recommendations", text: "Placeholder copy: next steps based on what the data shows." }
+    - { icon: "◆", title: "Performance Reports", text: "Review campaign results, traffic, leads, and engagement." }
+    - { icon: "◈", title: "Spend Tracking", text: "Monitor advertising costs and understand where your budget goes." }
+    - { icon: "◎", title: "Goal Tracking", text: "Measure performance against your business and marketing objectives." }
+    - { icon: "◐", title: "Recommendations", text: "Use data-backed insights to guide your next marketing decisions." }
 results:
-  heading: "Decisions backed by data"
-  paragraph: "Placeholder copy: reporting gives you the full picture so every dollar can explain itself."
+  heading: "Decisions Backed by Data"
+  paragraph: "Know what is working, what needs attention, and where to focus next. Our reporting helps you evaluate performance and make better use of your marketing budget."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing data-backed decisions"
-  ctaLabel: "Get a quote"
+  ctaLabel: "Get a Quote"
 process:
-  heading: "How it works"
+  heading: "How It Works"
   subhead: ""
   steps:
-    - { title: "Set goals", text: "Placeholder copy: we agree on what success looks like." }
-    - { title: "Track", text: "Placeholder copy: we connect and monitor your data." }
-    - { title: "Report", text: "Placeholder copy: you receive clear updates and next steps." }
-faqHeading: "Common questions about reporting"
+    - { title: "Set Goals", text: "Define the metrics and outcomes that matter to your business." }
+    - { title: "Track", text: "Monitor campaign activity, marketing spend, and performance data." }
+    - { title: "Report", text: "Receive clear updates and actionable recommendations." }
+faqHeading: "Common Questions About Reporting"
 faq:
   - question: "How often will I receive reports?"
-    answer: "Placeholder answer: reporting cadence is set during onboarding."
+    answer: "Reporting frequency is established during onboarding based on your marketing needs and campaign goals."
+  - question: "What marketing metrics can you track?"
+    answer: "Depending on your campaigns and tracking setup, reports may include website traffic, clicks, leads, conversions, advertising spend, and campaign performance."
   - question: "How do I get a quote?"
-    answer: "Use the form on our [Contact page](/contact) and we typically reply within one business day."
+    answer: "Complete our [contact form](/contact), and our team typically responds within one business day."
 closing:
-  heading: "Ready for clearer reporting?"
-  text: "Tell us about your business and we will put together a plan built around your goals."
-  ctaLabel: "Get a quote"
+  heading: "Make Better Decisions With Better Data."
+  text: "Get a clearer understanding of your marketing performance with reporting and analytics from Rizq Marketing."
+  ctaLabel: "Get a Quote"

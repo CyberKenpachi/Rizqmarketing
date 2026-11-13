@@ -10,55 +10,55 @@ outcomes:
   - "Campaigns built for English and Spanish speaking audiences"
   - "Creative made to stop the scroll and drive action"
 quoteLabel: "Get a quote for social advertising"
-metaTitle: "Meta & Social Advertising Services | Rizq Marketing"
-metaDescription: "Facebook and Instagram campaigns built to drive lead volume at a lower cost. Get a custom Meta advertising quote from Rizq Marketing."
+metaTitle: "Meta Ads Management Services | Facebook & Instagram"
+metaDescription: "Generate more leads with expert Meta Ads management. Rizq Marketing creates and optimizes Facebook and Instagram campaigns for business growth."
 noindex: false
 hero:
   eyebrow: "Meta & social advertising"
-  headline: "Social advertising that reaches the right audience."
-  subhead: "Placeholder copy: we plan and run Facebook and Instagram campaigns built to drive consistent lead volume."
+  headline: "Social Advertising That Reaches the Right Audience."
+  subhead: "Reach potential customers where they spend their time. Rizq Marketing manages Facebook and Instagram advertising campaigns designed to increase brand awareness, attract qualified leads, and support business growth."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing social advertising"
-  ctaLabel: "Get a quote"
+  ctaLabel: "Get a Quote"
 why:
-  heading: "Why Meta and social advertising?"
-  paragraph: "Placeholder copy: Facebook and Instagram let you reach the right people wherever they spend their time, with creative designed to stop the scroll."
+  heading: "Why Meta and Social Advertising?"
+  paragraph: "Facebook and Instagram advertising helps your business connect with the right audience through targeted campaigns and engaging creative."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing audience reach"
   benefits:
-    - { icon: "◎", label: "Reach the right audience" }
-    - { icon: "◈", label: "English and Spanish campaigns" }
-    - { icon: "◆", label: "Steady lead volume" }
+    - { icon: "◎", label: "Reach the Right Audience – Target customers based on location, interests, and demographics." }
+    - { icon: "◈", label: "English and Spanish Campaigns – Connect with audiences through bilingual advertising." }
+    - { icon: "◆", label: "Generate More Leads – Focus campaigns on meaningful inquiries and conversions." }
 breakdown:
-  heading: "What Meta advertising includes"
-  subhead: "Placeholder copy: strategy, creative, and management in one place."
+  heading: "What Meta Advertising Includes"
+  subhead: "We handle the essential parts of your Facebook and Instagram campaigns, from planning to ongoing optimization."
   cards:
-    - { icon: "◎", title: "Audience strategy", text: "Placeholder copy: audiences built around your ideal customer." }
-    - { icon: "◈", title: "Creative direction", text: "Placeholder copy: ad creative made to drive action." }
-    - { icon: "◐", title: "Campaign management", text: "Placeholder copy: day-to-day management across Facebook and Instagram." }
-    - { icon: "◆", title: "Testing and optimization", text: "Placeholder copy: ongoing tests to lower the cost of each lead." }
+    - { icon: "◎", title: "Audience Strategy", text: "Identify and target audiences most likely to become customers." }
+    - { icon: "◈", title: "Creative Direction", text: "Develop ad messaging and creative that capture attention and encourage action." }
+    - { icon: "◐", title: "Campaign Management", text: "Manage campaign setup, budgets, placements, and performance." }
+    - { icon: "◆", title: "Testing and Optimization", text: "Improve targeting, ads, and campaign results through ongoing testing." }
 results:
-  heading: "Lead volume you can see"
-  paragraph: "Placeholder copy: performance is reported in plain language so you know what your social budget is producing."
+  heading: "Lead Volume You Can See"
+  paragraph: "Know how your campaigns are performing. We track important metrics, including reach, clicks, leads, and cost per lead, so you can understand where your advertising budget goes."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing campaign results"
-  ctaLabel: "Get a quote"
+  ctaLabel: "Get a Quote"
 process:
-  heading: "How it works"
+  heading: "How It Works"
   subhead: ""
   steps:
-    - { title: "Plan", text: "Placeholder copy: we define audiences, offers, and goals." }
-    - { title: "Launch", text: "Placeholder copy: we produce creative and launch campaigns." }
-    - { title: "Improve", text: "Placeholder copy: we test, refine, and report on results." }
-faqHeading: "Common questions about Meta and social advertising"
+    - { title: "Plan", text: "We identify your goals, audience, and campaign strategy." }
+    - { title: "Launch", text: "We build and launch your Facebook and Instagram campaigns." }
+    - { title: "Improve", text: "We monitor performance and make adjustments to improve results." }
+faqHeading: "Frequently Asked Questions"
 faq:
   - question: "Which platforms do you advertise on?"
-    answer: "We plan and run advertising across Facebook and Instagram."
+    answer: "We manage paid advertising campaigns on Facebook and Instagram through Meta."
   - question: "Can you run bilingual campaigns?"
-    answer: "Yes. We build campaigns for both English and Spanish speaking audiences."
+    answer: "Yes. We can create campaigns in English and Spanish to reach your preferred audiences."
   - question: "How do I get a quote?"
-    answer: "Fill out the form on our [Contact page](/contact) and we typically reply within one business day."
+    answer: "Complete our [contact form](/contact), and our team typically responds within one business day."
 closing:
-  heading: "Ready to grow on social?"
-  text: "Tell us about your business and we will put together a plan built around your goals."
-  ctaLabel: "Get a quote"
+  heading: "Ready to Reach More Customers?"
+  text: "Put your business in front of the right audience with strategic Meta Ads management."
+  ctaLabel: "Get a Quote"

@@ -10,55 +10,57 @@ outcomes:
   - "Improved visibility in local search results and maps"
   - "A stronger, more consistent online presence overall"
 quoteLabel: "Get a quote for SEO"
-metaTitle: "SEO & Local Visibility Services | Rizq Marketing"
-metaDescription: "Stronger search rankings and local visibility so more of the right customers find you first. Get a custom SEO quote from Rizq Marketing."
+metaTitle: "SEO, Local SEO & GEO Services | Rizq Marketing"
+metaDescription: "Improve your Google rankings, local search presence, and AI visibility with SEO and GEO services from Rizq Marketing."
 noindex: false
 hero:
   eyebrow: "SEO & local visibility"
-  headline: "Be the business customers find first."
-  subhead: "Placeholder copy: we improve how your business shows up in search results, local listings, and maps."
+  headline: "Be the Business Customers Find First."
+  subhead: "Get discovered across Google Search, Google Maps, and AI-powered search platforms. Rizq Marketing combines SEO, local optimization, and GEO strategies to help your business improve online visibility and reach potential customers."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing search visibility"
-  ctaLabel: "Get a quote"
+  ctaLabel: "Get a Quote"
 why:
-  heading: "Why SEO and local visibility?"
-  paragraph: "Placeholder copy: most customers start with a search. Strong rankings and accurate local listings put your business in front of them, and the gains build over time."
+  heading: "Why SEO and Local Visibility?"
+  paragraph: "Customers use search engines and AI tools to find businesses, compare services, and make decisions. Build a stronger online presence where your potential customers are searching."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing local search"
   benefits:
-    - { icon: "◐", label: "Stronger rankings" }
-    - { icon: "◎", label: "Visible in local results and maps" }
-    - { icon: "◆", label: "Gains that build over time" }
+    - { icon: "◐", label: "Stronger Search Rankings – Improve visibility for relevant keywords and services." }
+    - { icon: "◎", label: "Local and Maps Visibility – Help nearby customers discover your business." }
+    - { icon: "◆", label: "AI Search Visibility – Strengthen your content and online presence for AI-powered search experiences." }
 breakdown:
-  heading: "What SEO includes"
-  subhead: "Placeholder copy: the work that improves how your business shows up in search."
+  heading: "What SEO Includes"
+  subhead: "We improve the signals that help search engines and AI-powered platforms understand and discover your business."
   cards:
-    - { icon: "◐", title: "Keyword strategy", text: "Placeholder copy: focus on the terms your customers search." }
-    - { icon: "◎", title: "Local listings", text: "Placeholder copy: accurate, consistent listings and map visibility." }
-    - { icon: "◈", title: "On-page optimization", text: "Placeholder copy: improvements to your pages and content." }
-    - { icon: "◆", title: "Tracking and reporting", text: "Placeholder copy: regular updates on rankings and visibility." }
+    - { icon: "◐", title: "Keyword Strategy", text: "Target relevant search terms, local intent, and customer questions." }
+    - { icon: "◎", title: "Local SEO", text: "Optimize your Google Business Profile, local listings, and location signals." }
+    - { icon: "◈", title: "On-Page Optimization", text: "Improve website content, metadata, internal links, and structured data." }
+    - { icon: "◆", title: "GEO and AI Visibility", text: "Optimize content, entity information, and topical relevance to improve your chances of appearing in AI-generated search answers." }
 results:
-  heading: "Visibility that compounds"
-  paragraph: "Placeholder copy: SEO is a longer-term investment. We track progress and report on it in plain language."
+  heading: "Visibility That Compounds"
+  paragraph: "Build a stronger digital presence through consistent SEO and GEO improvements. We monitor search performance, local visibility, and relevant traffic to identify opportunities for continued growth."
   image: "/images/uploads/placeholder.svg"
   imageAlt: "Illustration representing growth in search visibility"
-  ctaLabel: "Get a quote"
+  ctaLabel: "Get a Quote"
 process:
-  heading: "How it works"
+  heading: "How It Works"
   subhead: ""
   steps:
-    - { title: "Audit", text: "Placeholder copy: we review your current search presence." }
-    - { title: "Implement", text: "Placeholder copy: we make the improvements that matter most." }
-    - { title: "Grow", text: "Placeholder copy: we keep building authority and report on progress." }
-faqHeading: "Common questions about SEO"
+    - { title: "Audit", text: "Review your website, search rankings, local presence, and AI visibility opportunities." }
+    - { title: "Implement", text: "Apply targeted SEO, local optimization, and GEO improvements." }
+    - { title: "Grow", text: "Track performance, strengthen your online presence, and refine your strategy." }
+faqHeading: "Common Questions About SEO"
 faq:
   - question: "How long does SEO take to show results?"
-    answer: "Most businesses start seeing measurable movement in rankings and local visibility within 3 to 6 months, with stronger gains building over time as authority and content grow."
-  - question: "Do you handle local SEO?"
-    answer: "Yes. We improve visibility in local search results and maps."
+    answer: "SEO timelines vary depending on competition, website condition, and strategy. Many businesses begin seeing measurable progress within 3 to 6 months."
+  - question: "Do you handle local SEO and Google Maps optimization?"
+    answer: "Yes. We optimize your website and Google Business Profile to help your business appear in relevant local searches and map results."
+  - question: "What is GEO or Generative Engine Optimization?"
+    answer: "GEO focuses on improving how your business and content can be understood, referenced, and surfaced by AI-powered search experiences."
   - question: "How do I get a quote?"
-    answer: "Use the form on our [Contact page](/contact) and we typically reply within one business day."
+    answer: "Use the form on our [Contact page](/contact), and our team typically responds within one business day."
 closing:
-  heading: "Ready to be found first?"
-  text: "Tell us about your business and we will put together a plan built around your goals."
-  ctaLabel: "Get a quote"
+  heading: "Ready to Improve Your Search and AI Visibility?"
+  text: "Help more customers discover your business through SEO, local search, and AI-powered search experiences."
+  ctaLabel: "Get a Quote"
