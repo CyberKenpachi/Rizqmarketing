@@ -4,8 +4,14 @@ order: 1
 icon: ◈
 serviceType: Google Ads / PPC management
 cardSummary: Search and display campaigns built to bring in more qualified leads for less.
-summary: We plan, build, and manage Google Ads campaigns across Search and
-  Display, matched to the way your customers actually search for what you offer.
+summary: >
+  Reach potential customers when they are actively searching for the products
+  and services your business offers. Rizq Marketing provides strategic Google
+  Ads management services that help businesses attract relevant traffic, improve
+  advertising efficiency, and turn search activity into valuable leads.
+
+
+  From keyword research and campaign setup to ad optimization and performance tracking, we manage your Google Ads campaigns with your business goals in mind. Every campaign is built around your target audience, budget, and the actions you want customers to take.
 outcomes:
   - More qualified leads at a lower cost per lead
   - Ad spend focused on real buyers instead of wasted clicks
@@ -26,14 +32,20 @@ hero:
   ctaLabel: Get a quote
 why:
   heading: Why Google Ads management?
-  paragraph: "Placeholder copy: Google Ads puts your business in front of people
-    at the moment they are searching for what you offer. Careful management
-    keeps spend focused on buyers instead of wasted clicks."
+  paragraph: >
+    Google Ads gives your business the opportunity to appear in front of
+    potential customers at the exact moment they are searching for solutions you
+    provide. But getting visibility is only the beginning. Without proper
+    targeting, relevant ad messaging, and consistent optimization, advertising
+    costs can add up without producing meaningful results.
+
+
+    Our Google Ads management approach focuses on reaching the right audience, making better use of your advertising budget, and measuring the results that matter to your business.
   image: /images/uploads/google-ads-growth-dashboard-and-search-visibility.png
   imageAlt: Illustration representing search intent
   benefits:
     - icon: ◈
-      label: Reach buyers who are already searching
+      label: Reach Buyers Who Are Already Searching
     - icon: ◎
       label: Spend focused on real buyers
     - icon: ◆
