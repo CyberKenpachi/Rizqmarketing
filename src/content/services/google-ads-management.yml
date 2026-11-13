@@ -4,14 +4,10 @@ order: 1
 icon: ◈
 serviceType: Google Ads / PPC management
 cardSummary: Search and display campaigns built to bring in more qualified leads for less.
-summary: >
-  Reach potential customers when they are actively searching for the products
-  and services your business offers. Rizq Marketing provides strategic Google
-  Ads management services that help businesses attract relevant traffic, improve
-  advertising efficiency, and turn search activity into valuable leads.
-
-
-  From keyword research and campaign setup to ad optimization and performance tracking, we manage your Google Ads campaigns with your business goals in mind. Every campaign is built around your target audience, budget, and the actions you want customers to take.
+summary: Reach potential customers when they are actively searching for the
+  products and services your business offers. Rizq Marketing provides strategic
+  Google Ads management services that help businesses attract relevant traffic,
+  improve advertising efficiency, and turn search activity into valuable leads.
 outcomes:
   - More qualified leads at a lower cost per lead
   - Ad spend focused on real buyers instead of wasted clicks
@@ -63,28 +59,41 @@ breakdown:
   cards:
     - icon: ◈
       title: Search campaigns
-      text: >-
-        Reach potential customers through Google Search ads when they look for
+      text: Reach potential customers through Google Search ads when they look for
         products or services related to your business. We develop targeted
         search campaigns using relevant keywords, organized ad groups, and
         compelling ad copy that reflects what your customers are looking for.
-
-
-        Our approach considers search intent, geographic targeting, and ad relevance to help connect your business with valuable search opportunities.
     - icon: ◎
       title: Display campaigns
-      text: "Placeholder copy: visual campaigns that keep your brand in front of the
-        right audience."
+      text: Keep your business visible to relevant audiences through visual
+        advertising across Google's Display Network. Display campaigns can help
+        increase brand awareness, support remarketing efforts, and reconnect
+        with people who have previously interacted with your business.
     - icon: ◐
       title: Keyword research
-      text: "Placeholder copy: research that finds the searches worth paying for."
+      text: The right keywords help determine who sees your advertisements and how
+        effectively your budget is used. We research search terms related to
+        your products and services, identify commercial search opportunities,
+        and organize keywords according to relevance and customer intent.
     - icon: ◆
       title: Ongoing optimization
-      text: "Placeholder copy: regular reviews to improve cost per lead over time."
+      text: Google Ads campaigns require regular attention to remain relevant and
+        efficient. We monitor performance, review search terms, assess ad
+        effectiveness, and identify areas that need improvement.
 results:
   heading: Results you can measure and explain
-  paragraph: "Placeholder copy: every campaign is tracked against your goals so
-    you always know what your budget is producing."
+  paragraph: >-
+    You should understand how your campaigns contribute to your business
+    objectives and where opportunities for improvement exist.
+
+
+    Rizq Marketing focuses on meaningful campaign measurement through performance monitoring and conversion tracking. Depending on your business goals and tracking setup, we can evaluate website inquiries, phone calls, form submissions, and other valuable customer actions.
+
+
+    We review key performance indicators such as click-through rate, cost per click, conversion rate, cost per lead, and overall campaign performance to help identify what is working and what needs attention.
+
+
+    With clear reporting and practical recommendations, you gain better visibility into your Google Ads investment and can make more informed decisions about your advertising strategy.
   image: /images/uploads/google-ads-marketing-growth-collage.png
   imageAlt: Illustration representing measurable results
   ctaLabel: Get a quote
@@ -93,24 +102,49 @@ process:
   subhead: ""
   steps:
     - title: Discovery
-      text: "Placeholder copy: we learn your business, goals, and budget."
+      text: We begin by learning about your business, products or services, target
+        customers, advertising budget, and growth objectives. This helps us
+        understand your market and identify relevant opportunities before
+        building your campaigns.
     - title: Build and launch
-      text: "Placeholder copy: we build your campaigns and launch them."
+      text: Once we understand your requirements, we conduct keyword research,
+        organize your campaign structure, develop relevant ad copy, and
+        configure targeting. We also review conversion tracking requirements to
+        help ensure important customer actions can be measured when your
+        campaigns go live.
     - title: Optimize and report
-      text: "Placeholder copy: we refine performance and report in plain language."
+      text: After launch, we monitor campaign performance and identify opportunities
+        to improve keyword targeting, ad relevance, and budget efficiency. We
+        provide clear performance updates and recommendations so you understand
+        how your campaigns are progressing and what adjustments may help achieve
+        better results.
 faqHeading: Common questions about Google Ads management
 faq:
   - question: How much does Google Ads management cost?
-    answer: Pricing depends on your business size, goals, and ad spend, so we do not
-      publish flat rates. Every engagement starts with a consultation and a
-      quote built around your budget.
+    answer: Google Ads management costs depend on your advertising budget, campaign
+      complexity, business objectives, and the level of management required.
+      Your Google Ads advertising spend and agency management fees are separate
+      expenses. At Rizq Marketing, we evaluate your requirements before
+      recommending an approach that fits your business and budget. Contact us
+      for a customized quote.
   - question: Do you run Google Ads campaigns in Spanish?
-    answer: Yes. We build campaigns for both English and Spanish speaking audiences.
+    answer: Yes. Rizq Marketing supports bilingual campaign builds in English and
+      Spanish. We can develop campaign messaging and targeting strategies suited
+      to your intended language audiences, helping businesses connect with
+      potential customers across different language preferences.
   - question: How do I get started?
-    answer: Send a request on our [Contact page](/contact) and we typically reply
-      within one business day.
+    answer: Getting started is simple. Contact Rizq Marketing and tell us about your
+      business, target audience, advertising goals, and current marketing
+      challenges. We will review your requirements, discuss potential
+      opportunities, and help you determine a suitable Google Ads management
+      strategy.
 closing:
   heading: Ready to grow with Google Ads?
-  text: Tell us about your business and we will put together a plan built around
-    your goals.
+  text: >-
+    Your next customers may already be searching for what your business offers.
+    Make it easier for them to find you with a Google Ads strategy built around
+    relevant searches, effective targeting, and measurable business goals.
+
+
+    Rizq Marketing helps businesses plan, manage, and optimize paid advertising campaigns with a focus on qualified traffic and meaningful conversions. Tell us what you want to achieve, and let's explore how Google Ads can support your growth.
   ctaLabel: Get a quote
